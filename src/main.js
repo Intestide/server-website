@@ -32,6 +32,16 @@ var material = [
     new THREE.MeshLambertMaterial( { map: loader.load( 'grass_block_side.png' ) } )        
 ];   
 material.forEach( ( m ) => {m.map.magFilter = THREE.NearestFilter;});
+material.side = THREE.DoubleSide;
+material.onBeforeCompile = function(shader) {
+    shader.fragmentShader = shader.fragmentShader.replace(
+        '#include <output_fragment>',
+        `
+        vec3 backfaceColor = vec3(0.4, 0.4, 0.4); // Or any desired color
+        gl_FragColor = (gl_FrontFacing) ? vec4(outgoingLight, diffuseColor.a) : vec4(backfaceColor, opacity);
+        `
+    );
+};
 const geometry = new THREE.BoxGeometry( 1, 1, 1 );
 const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
@@ -136,7 +146,7 @@ const enterWorld = () => {
   })
   
   gsap.to('#enterBackground', {
-    duration: 2,
+    duration: 1.5,
     opacity: 1,
     ease: "expo.in",
   });

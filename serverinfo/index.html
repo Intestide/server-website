@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="style.css">
   </heda>
   <body>
+    
     <div class = "container">
       <h1>Welcome message</h1>
       <div class="server-status">
@@ -13,17 +14,93 @@
       <div class="server-changelog">
         <h2>Changelog</h2>
         <ul>
-          <li>shit</li>
-          <li>ass</li>
-          <li>Fuck</li>
+          <li>
+            <div class="changelog-title">1.0.0 <span class="changelog-date">1/2/3</span></div>
+            <ul>
+              <li>Added stuff</li>
+              <li>Fixed stuff</li>
+            </ul>
+          </li>
         </ul>
       </div>
-      <div class="download-client">
-        <div class="download_message">There are 3 diffrent ways to download the required files to play the server depending on your experinece in modding minecraft</div>
-        <input type="radio" name="client-type" id="client-modlist"> <label for="modlist">mod list - hardest</label>
-        <input type="radio" name="client-type" id="client-versionfile"> <label for="version file">version file - easier</label>
-        <input type="radio" name="client-type" id="client-AIO"> <label for="AIO">All In One - easist</label>
+      <div class="download-container">
+        <div class="download-message">We offer diffrent ways to play the game depending on technical knowlage and costomizibilty</div>
+        <div class="download-choices">
+          <div class="download-choice">
+            <div class="choice_name">Mod list</div>
+            <div class="download_button">
+              <input type="button" id="download_modlist" value="Download Mod List"><!--this will be tempary, we add cools shit lator-->
+            </div>
+            <hr>
+            <div class="choice_details">
+              <ul>
+                <li class="details_con">Need to have official minecraft installed</li>
+                <li class="details_con">need to install mod loader manually</li>
+              </ul>
+            </div>
+            <div class="download_guide">
+              <input type="button" class="toggle-guide" value="Show Guide" data-toggle-target="modlist_guide">
+              <div class="guide_content" data-toggle-id="modlist_guide">
+                <ul>
+                  <li>Step 1: Download the mod list</li>
+                  <li>Step 2: Download the mod loader: <a href="https://files.minecraftforge.net/net/minecraftforge/forge/index_1.20.1.html">link</a> <span class="ps">PS: the server version might change so make sure to download the correct version</span></li>
+                  <li>Step 3: install the loader and make sure the modded mincraft version shows up in the launcher</li>
+                  <li>Step 4: Download the mod list and extract</li>
+                  <li>Step 5: Copy the mods from the mod list to the mods folder in the minecraft directory<span class="ps">PS: if a folder named "mods" dose not exist, just creat one yourself</span></li>
+                  <li>Step 6: RUN</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="download-choice">
+            <div class="choice_name">Un-official Launcher (HMCL)</div>
+            <div class="download_button">
+              <!-- <input type="button" id="download_modlist" value="Download files">this will be tempary, we add cools shit lator -->
+            </div>
+            <hr>
+            <div class="choice_details">
+              <ul>
+                <li class="details_pro">Uses the more user friendly HMCL launcher</li>
+                <li class="details_con">might need to know chinese lol (jk u could use github or something)</li>
+              </ul>
+            </div>
+            <div class="download_guide">
+              <input type="button" class="toggle-guide" value="Show Guide" data-toggle-target="launcher_guide">
+              <div class="guide_content" data-toggle-id="launcher_guide">
+                <ul>
+                  <li>Step 1: download the HMCL launcher from their website: <a href="https://hmcl.huangyuhui.net/">link</a> or github: <a href="https://github.com/HMCL-dev/HMCL">link</a> <span class="ps">you might need to install java first if you need "jar" version of the launcher, which only non-windows user need.</span></li>
+                  <li>Step 2: do shit</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="download-choice">
+            <div class="choice_name">One Button Launcher</div>
+            <div class="download_button">
+              <input type="button" id="download-nothing" value="Download nothing as of right now"><!--this will be tempary, we add cools shit lator-->
+            </div>
+            <hr>
+            <div class="choice_details">
+              <ul>
+                <li class="details_con">Not made yet. i blame eric wong</li>
+              </ul>
+            </div>
+            <div class="download_guide">
+              <input type="button" class="toggle-guide" value="Show Guide" data-toggle-target="nothing_guide">
+              <div class="guide_content" data-toggle-id="nothing_guide">
+                <ul>
+                  <li>WAIT</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <input type="radio" name="client-type" id="client-modlist" hidden> <label for="modlist">mod list - hardest</label>
+        <input type="radio" name="client-type" id="client-versionfile" hidden> <label for="version file">version file - easier</label>
+        <input type="radio" name="client-type" id="client-AIO" hidden> <label for="AIO">All In One - easist</label> -->
       </div>
     </div>
+    <div class="background"></div>
+    <script src="script.js" type="module"></script>
   </body>
-</html>
+</html> 
